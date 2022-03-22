@@ -15,7 +15,7 @@
 <!--          default-active默认选中-->
           <el-menu-item index="1-1">
             <i class="el-icon-s-home"></i>
-            <span slot="title">分组一</span>
+            <span slot="title">用户管理</span>
           </el-menu-item>
           <el-menu-item index="1-2">
             <i class="el-icon-s-home"></i>
@@ -54,7 +54,7 @@ export default {
    }
    .logo {
      height: 60px;
-     width: 200px;
+     width: 80px;
      line-height: 60px;
      font-size: 18px;
      color: #FFFFFF;

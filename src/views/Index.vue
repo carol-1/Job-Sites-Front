@@ -1,9 +1,17 @@
 <template>
-    <el-container class="el-container">
+    <el-container>
       <Sidebar :isCollapse="isCollapse"></Sidebar>
       <el-container>
-       <Navbar @handelCollapse="handelCollapse"></Navbar>
-        <el-main>Main</el-main>
+        <el-header>
+          <Navbar @handelCollapse="handelCollapse"></Navbar>
+        </el-header>
+         <el-main>
+           <el-breadcrumb separator-class="el-icon-arrow-right">
+             <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+             <el-breadcrumb-item>用户管理</el-breadcrumb-item>
+           </el-breadcrumb>
+           <router-view class="rv"></router-view>
+         </el-main>
       </el-container>
     </el-container>
 </template>
@@ -15,7 +23,7 @@ export default {
   name: "Index",
   components: {
     Sidebar,
-    Navbar
+    Navbar,
   },
   data(){
     return {
@@ -33,6 +41,28 @@ export default {
 <style scoped>
 .el-container {
   width: 100%;
-  height: 100%;
+  height: 100% !important;
+  background-color: #f2f2f2;
 }
+.el-main {
+  padding: 0px !important;
+}
+.el-breadcrumb {
+  background-color: #ffffff;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #FFFFFF84;
+  box-sizing: border-box;
+  padding-left: 20px;
+}
+.el-header {
+  padding: 0px !important;
+}
+.rv {
+  background-color: #ffffff;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
 </style>

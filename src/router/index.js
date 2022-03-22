@@ -12,7 +12,14 @@ const router = new VueRouter({
       },{
           path: '/Index',
           name:'Index',
-          component: ()=>import('@/views/Index')
+          component: ()=>import('@/views/Index'),
+          children: [
+              {
+                  path: '/User',
+                  name:'User',
+                  component: ()=>import('@/views/user/User')
+              }
+          ]
       }
   ]
 })
